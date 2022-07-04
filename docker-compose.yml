@@ -17,7 +17,6 @@ services:
   db:
     image: postgres
     restart: always
-    ports:
     environment:
       POSTGRES_DB: converter
       POSTGRES_USER: admin

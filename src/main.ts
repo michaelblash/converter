@@ -6,5 +6,6 @@ async function bootstrap() {
   app.enableCors();
   app.setGlobalPrefix('api');
   await app.listen(3000);
+  console.log('Setup finished. Open http://localhost:3000 in your browser');
 }
 bootstrap();

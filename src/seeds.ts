@@ -11,9 +11,7 @@ export default class UserSeeder implements Seeder {
   ): Promise<any> {
     const repository = dataSource.getRepository(User);
     try {
-
       const password = await bcrypt.hash('qwerty', passwordConstants.saltRounds);
-
 
       await repository.insert([
         {

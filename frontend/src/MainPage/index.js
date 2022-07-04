@@ -106,12 +106,15 @@ export default () => {
       <div style={{ fontSize: '20px', textAlign: 'right'}}><span style={{ cursor: 'pointer' }} onClick={() => {
         dispatch(logout());
       }}>Logout</span></div>
+
       <h1>Converter</h1>
+
       <div>
         <Space direction="vertical">
           <DatePicker onChange={onChangeDate} />
         </Space>
       </div>
+
       <div>
         {
           isLoading ? <span>Loading...</span> : error ? <div>{error}</div> : !!ratesByDates[date] &&
@@ -121,18 +124,22 @@ export default () => {
               value={fromValue}
               onValueChange={values => setFromValue(values.floatValue)}
             />
+
             <Dropdown
               value={fromCurrency}
               onChange={val => onChangeFromCurrency(val)}
               options={ratesByDates[date].map(c => ({ value: c.currency.code, title: c.currency.name }))}
             />
+
             <span>=</span>
+
             <NumberFormat
             displayType="text"
               allowNegative={false}
               value={toValue}
               decimalScale={2}
             />
+
             <Dropdown
               value={toCurrency}
               onChange={val => onChangeToCurrency(val)}

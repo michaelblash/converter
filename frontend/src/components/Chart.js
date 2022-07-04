@@ -18,9 +18,9 @@ export default ({ options }) => {
     ],
     xAxis: {
       labels: {
-          formatter: function() {
-              return new Date(this.value).toISOString().slice(0, 10)
-          }
+        formatter: function() {
+          return new Date(this.value).toISOString().slice(0, 10)
+        }
       },
   },
   };
